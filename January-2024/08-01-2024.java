@@ -1,0 +1,133 @@
+/*
+    Author : Vandana Kumari
+    Date   : 08/01/2024
+    Problem : Merge 2 sorted linked list in reverse order
+    Problem Link: https://www.geeksforgeeks.org/problems/merge-2-sorted-linked-list-in-reverse-order/1
+    
+ */
+
+
+import java.util.*;
+import java.io.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+public class MainClass {
+
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while(t--> 0) {
+            int N = sc.nextInt();
+            int M = sc.nextInt();
+
+            Node node1 = null;
+            Node temp1 = null;
+
+            for(int i=0; i<N; i++) {
+                int value = sc.nextInt();
+                Node newNode = new Node(value);
+                if (node1 == null) {
+                    node1 = newNode;
+                    temp1 = node1;
+                }
+                else {
+                    temp1.next = newNode;
+                    temp1 = temp1.next;
+                }
+            }
+
+            Node node2 = null;
+            Node temp2 = null;
+
+            for(int i=0; i<N; i++) {
+                int value = sc.nextInt();
+                Node newNode = new Node(value);
+                if (node2 == null) {
+                    node2 = newNode;
+                    temp2 = node1;
+                }
+                else {
+                    temp2.next = newNode;
+                    temp2 = temp2.next;
+                }
+            }
+
+            GfG gfg = new GfG();
+            Node result = gfg.mergeResult(node1, node2);
+
+            printList(result);
+        }
+    }
+
+    static void printList(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+}
+
+
+/* Structure of the node*/
+/* class Node
+{
+	int data;
+	Node next;
+	
+	Node(int d)
+	{
+		data = d;
+		next = null;
+	}
+} */
+
+class GfG{
+    Node mergeResult(Node node1, Node node2){
+	if(node1 == null && node2 == null) {
+            return null;
+        }
+        
+        Node present = null;
+        
+        while (node1 != null && node2 != null) {
+            if (node1.data <= node2.data) {
+                Node temp = node1.next;
+                node1.next = present;
+                present = node1;
+                node1 = temp;
+            } else {
+                Node temp = node2.next;
+                node2.next = present;
+                present = node2;
+                node2 = temp;
+            }
+        }
+        
+        while (node1 != null) {
+            Node temp = node1.next;
+            node1.next = present;
+            present = node1;
+            node1 = temp;
+        }
+        
+        while (node2 != null) {
+            Node temp = node2.next;
+            node2.next = present;
+            present = node2;
+            node2 = temp;
+        }
+        
+        return present;
+    }
+}
