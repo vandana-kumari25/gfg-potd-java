@@ -20,7 +20,7 @@ class Node {
     }
 }
 
-public class MainClass {
+class MainClass {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
