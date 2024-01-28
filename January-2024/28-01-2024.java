@@ -8,8 +8,8 @@ Problem Link: https://www.geeksforgeeks.org/problems/geekina-hate-1s/1
 //{ Driver Code Starts
 import java.io.*;
 import java.util.*;
-public class Main{
- 
+class Main{
+
     public static void main(String args[]) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter ot = new PrintWriter(System.out);
@@ -24,7 +24,7 @@ public class Main{
         }
         ot.close();
     }
-  
+
 } 
 // } Driver Code Ends
 
