@@ -11,7 +11,7 @@ Problem Link : https://www.geeksforgeeks.org/problems/k-closest-elements3619/1
 import java.io.*;
 import java.util.*;
 
-public class GFG {
+class GFG {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
