@@ -11,7 +11,7 @@ Problem Link : https://www.geeksforgeeks.org/problems/nuts-and-bolts-problem0431
 import java.io.*;
 import java.util.*;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
