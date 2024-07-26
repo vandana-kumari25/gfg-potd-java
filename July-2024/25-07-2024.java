@@ -19,7 +19,7 @@ class Node {
     }
 }
 
-public class Main {
+class Main {
     public static boolean isValidBSTUtil(Node node, long lower, long upper) {
         if (node == null) return true;
         if (node.data <= lower || node.data >= upper) return false;
